@@ -1,9 +1,16 @@
 def intersection(arrays):
-
-    """
-    YOUR CODE HERE
-    """
-
+    num_count = dict()
+    for i, array in enumerate(arrays):
+        added = False
+        for num in array:
+            if num in num_count:
+                added = True
+                num_count[num] += 1
+            elif i == 0:
+                num_count[num] = 1
+        if i > 0 and not added:
+            break
+    result = [num[0] for num in num_count.items() if num[1] == len(arrays)]
     return result
 
 

@@ -1,9 +1,12 @@
 def has_negatives(a):
-
-    """
-    YOUR CODE HERE
-    """
-
+    result = []
+    num_map = dict()
+    for num in a:
+        if -num in num_map:
+            num_map[num] = True
+        else:
+            num_map[num] = False
+    result = [abs(num_tuple[0]) for num_tuple in num_map.items() if num_tuple[1]]
     return result
 
 
